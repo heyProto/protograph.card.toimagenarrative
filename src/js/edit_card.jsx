@@ -22,15 +22,7 @@ export default class EditCard extends React.Component {
   }
 
   exportData() {
-    let getDataObj = {
-      step: this.state.step,
-      dataJSON: this.state.dataJSON,
-      schemaJSON: this.state.schemaJSON,
-      optionalConfigJSON: this.state.optionalConfigJSON,
-      optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
-    }
-    getDataObj["name"] = getDataObj.dataJSON.data.title.substr(0,225); // Reduces the name to ensure the slug does not get too long, used for the title of the show page after publishing
-    return getDataObj;
+    return this.props.selector.getBoundingClientRect();
   }
 
   componentDidMount() {
