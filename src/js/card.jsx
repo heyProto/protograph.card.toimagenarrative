@@ -28,7 +28,7 @@ export default class toImage extends React.Component {
   }
 
   exportData() {
-    return document.getElementById('protograph-div').getBoundingClientRect();
+    return this.props.selector.getBoundingClientRect();
   }
 
   componentDidMount() {
