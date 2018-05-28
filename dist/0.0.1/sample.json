@@ -2,6 +2,10 @@
   "data": {
     "title":"Image Narrative Card",
     "url_16column": "https://cdn.protograph.pykih.com/images/JagranNews/2fcd23348b46deef/2358.jpeg",
+    "url_7column": "",
+    "url_4column": "",
+    "url_3column":"",
+    "url_2column":"",
     "link":"",
     "fit_to_size": false,
     "tab": true

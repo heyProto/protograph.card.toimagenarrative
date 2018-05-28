@@ -52,7 +52,6 @@ ProtoGraph.Card.toImageNarrative.prototype.renderCol7 = function (data) {
   this.mode = 'col7';
   this.render();
 }
-
 ProtoGraph.Card.toImageNarrative.prototype.renderCol16 = function (data) {
   this.mode = 'col16';
   this.render();
