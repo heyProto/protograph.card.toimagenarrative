@@ -6,19 +6,19 @@ window.ProtoGraph = window.ProtoGraph || {};
 window.ProtoGraph.Card = window.ProtoGraph.Card || {};
 
 
-ProtoGraph.Card.toImage = function () {
+ProtoGraph.Card.toImageNarrative = function () {
   this.cardType = 'Image';
 }
 
-ProtoGraph.Card.toImage.prototype.init = function (options) {
+ProtoGraph.Card.toImageNarrative.prototype.init = function (options) {
   this.options = options;
 }
 
-ProtoGraph.Card.toImage.prototype.getData = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.getData = function (data) {
   return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toImage.prototype.renderCol4 = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.renderCol4 = function (data) {
   this.mode = 'col4';
   ReactDOM.render(
     <Card
@@ -33,30 +33,31 @@ ProtoGraph.Card.toImage.prototype.renderCol4 = function (data) {
     this.options.selector);
 }
 
-ProtoGraph.Card.toImage.prototype.renderCol2 = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.renderCol2 = function (data) {
   this.mode = 'col2';
   this.render();
 }
 
-ProtoGraph.Card.toImage.prototype.renderCol3 = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.renderCol3 = function (data) {
   this.mode = 'col3';
   this.render();
 }
 
-ProtoGraph.Card.toImage.prototype.renderCol4 = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.renderCol4 = function (data) {
   this.mode = 'col4';
   this.render();
 }
 
-ProtoGraph.Card.toImage.prototype.renderCol7 = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.renderCol7 = function (data) {
   this.mode = 'col7';
   this.render();
 }
-ProtoGraph.Card.toImage.prototype.renderCol16 = function (data) {
+
+ProtoGraph.Card.toImageNarrative.prototype.renderCol16 = function (data) {
   this.mode = 'col16';
   this.render();
 }
-ProtoGraph.Card.toImage.prototype.render = function (data) {
+ProtoGraph.Card.toImageNarrative.prototype.render = function (data) {
   ReactDOM.render(
     <Card
       dataURL={this.options.data_url}

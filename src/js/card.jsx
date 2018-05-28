@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-export default class toImage extends React.Component {
+export default class toImageNarrative extends React.Component {
   constructor(props) {
     super(props)
 

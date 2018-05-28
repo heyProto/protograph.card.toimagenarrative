@@ -1,9 +1,9 @@
 {
   "data": {
-    "title":"Title",
+    "title":"Image Narrative Card",
     "url_16column": "https://cdn.protograph.pykih.com/images/JagranNews/2fcd23348b46deef/2358.jpeg",
     "link":"",
-    "fit_to_size": false
-  },
-  "mandatory_config":{}
+    "fit_to_size": false,
+    "tab": true
+  }
 }
