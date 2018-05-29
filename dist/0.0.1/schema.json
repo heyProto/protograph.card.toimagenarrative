@@ -30,7 +30,7 @@
         "link": {
           "type": "string",
           "title": "On click of image, link out to URL",
-          "pattern": "((?:https?\\:\/\/|www\\.)(?:[-a-z0-9]+\\.)*[-a-z0-9]+.*)"
+          "pattern": "((?:https?\\:\/\/|www\\.)(?:[-a-z0-9]+\\.)*[-a-z0-9]+.*)|^\\d*$"
         },
         "tab":{
           "type":"boolean",
