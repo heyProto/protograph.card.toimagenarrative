@@ -10,7 +10,7 @@ export default class EditCard extends React.Component {
     this.state = {
       step: 1,
       dataJSON: {},
-      mode: "col16",
+      mode: "col7",
       publishing: false,
       schemaJSON: undefined,
       uiSchemaJSON: {},
@@ -193,12 +193,6 @@ export default class EditCard extends React.Component {
               <div className="twelve wide column proto-card-preview proto-share-card-div">
                 <div className="protograph-menu-container">
                   <div className="ui compact menu">
-                    <a className={`item ${this.state.mode === 'col16' ? 'active' : ''}`}
-                      data-mode='col16'
-                      onClick={(e) => this.toggleMode(e)}
-                    >
-                      col-16
-                    </a>
                     <a className={`item ${this.state.mode === 'col7' ? 'active' : ''}`}
                       data-mode='col7'
                       onClick={(e) => this.toggleMode(e)}
@@ -210,18 +204,6 @@ export default class EditCard extends React.Component {
                       onClick={(e) => this.toggleMode(e)}
                     >
                       col-4
-                    </a>
-                    <a className={`item ${this.state.mode === 'col3' ? 'active' : ''}`}
-                      data-mode='col3'
-                      onClick={(e) => this.toggleMode(e)}
-                    >
-                      col-3
-                    </a>
-                    <a className={`item ${this.state.mode === 'col2' ? 'active' : ''}`}
-                      data-mode='col2'
-                      onClick={(e) => this.toggleMode(e)}
-                    >
-                      col-2
                     </a>
                   </div>
                 </div>

@@ -97,11 +97,8 @@ export default class toImageNarrative extends React.Component {
 
   renderImage() {
     let data = this.state.dataJSON.data,
-      url16 = data.url_16column,
       url7 = data.url_7column,
       url4 = data.url_4column,
-      url3 = data.url_3column,
-      url2 = data.url_2column,
       style = {},
       image,
       height,
@@ -109,19 +106,11 @@ export default class toImageNarrative extends React.Component {
       aspect_ratio,
       img = new Image();
 
-    if(url2 && (this.props.mode !='col16' && this.props.mode !='col7' && this.props.mode !="col4" && this.props.mode != 'col3') ){
-      image = url2;
-    }  
-    else if(url3 && (this.props.mode !='col16' && this.props.mode !='col7' && this.props.mode !="col4") ){
-      image = url3;
-    }  
-    else if(url4 && (this.props.mode !='col16' && this.props.mode !='col7') ){
+    if(url4 && (this.props.mode !='col7') ){
       image = url4;
     }
-    else if(url7 && this.props.mode != 'col16'){
+    else{
       image = url7;
-    }else{
-      image = url16;
     }
 
     style.width = this.state.width;
