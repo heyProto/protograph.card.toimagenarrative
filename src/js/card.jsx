@@ -23,12 +23,21 @@ export default class toImageNarrative extends React.Component {
     if (this.props.siteConfigs) {
       stateVar.siteConfigs = this.props.siteConfigs;
     }
-
+    this.handleClick = this.handleClick.bind(this);
     this.state = stateVar;
   }
 
   exportData() {
     return this.props.selector.getBoundingClientRect();
+  }
+
+  handleClick() {
+    if (this.state.dataJSON.data.tab) {
+      var win = window.open(this.state.dataJSON.data.link, '_blank');
+      win.focus();
+    } else {
+      window.open(this.state.dataJSON.data.link, '_top');
+    }
   }
 
   componentDidMount() {
@@ -119,7 +128,7 @@ export default class toImageNarrative extends React.Component {
     img.onload = (responseImage)=>{
       height = undefined;
       width = undefined;
-      
+
 
       let cont = document.getElementsByClassName('protograph-card')[0],
         card = cont.getBoundingClientRect(),
@@ -185,12 +194,12 @@ export default class toImageNarrative extends React.Component {
       const data = this.state.dataJSON.data,
         style = {};
 
-     
+
         style.height = "auto";
       return (
         <div id="protograph-div" className={`protograph-laptop-mode ${this.props.mode}`} style={style}>
           <div style={{ padding: 0 }} className={`protograph-card ${this.props.mode}`} style={style}>
-          <a href={data.link} target={`${(data.tab)? '_blank':'_self'}`}><div className="protograph-toImage-image-container">{this.renderImage()}</div></a>
+            <div className="protograph-toImage-image-container" onClick={data.link ? this.handleClick : undefined}>{this.renderImage()}</div>
           </div>
           {this.renderCredits()}
         </div>
