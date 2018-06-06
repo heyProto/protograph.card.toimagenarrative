@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+import { render } from 'react-dom';
+import { all as axiosAll, get as axiosGet, spread as axiosSpread } from 'axios';
 import Image from './card.jsx';
 import JSONSchemaForm from '../../lib/js/react-jsonschema-form';
 
@@ -36,19 +36,17 @@ export default class EditCard extends React.Component {
   componentDidMount() {
     // get sample json data based on type i.e string or object
     if (typeof this.props.dataURL === "string"){
-      axios.all([
-        axios.get(this.props.dataURL),
-        axios.get(this.props.schemaURL),
-        axios.get(this.props.optionalConfigURL),
-        axios.get(this.props.optionalConfigSchemaURL),
-        axios.get(this.props.uiSchemaURL)
+      axiosAll([
+        axiosGet(this.props.dataURL),
+        axiosGet(this.props.schemaURL),
+        axiosGet(this.props.siteConfigURL),
+        axiosGet(this.props.uiSchemaURL)
       ]).then(
-        axios.spread((card, schema, opt_config, opt_config_schema,uiSchema) => {
+        axiosSpread((card, schema, site_config, uiSchema) => {
           this.setState({
             dataJSON: card.data,
             schemaJSON: schema.data,
-            optionalConfigJSON: opt_config.data,
-            optionalConfigSchemaJSON: opt_config_schema.data,
+            siteConfigs: site_config.data,
             uiSchemaJSON: uiSchema.data
           });
         }))
@@ -212,8 +210,7 @@ export default class EditCard extends React.Component {
                     mode={this.state.mode}
                     dataJSON={this.state.dataJSON}
                     schemaJSON={this.state.schemaJSON}
-                    optionalConfigJSON={this.state.optionalConfigJSON}
-                    optionalConfigSchemaJSON={this.state.optionalConfigSchemaJSON}
+                    siteConfigs={this.state.optionalConfigs}
                   />
                 </div>
               </div>
