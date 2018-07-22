@@ -54,7 +54,7 @@ export default class toCard extends React.Component {
           console.log(height,width)
           this.setState({imgHeight:height,imgWidth:width})
         }
-        img.src = stateVar.dataJSON.data.img_url
+        img.src = stateVar.dataJSON.data.data.img_url
         console.log(img)
       }));
 
@@ -93,46 +93,119 @@ export default class toCard extends React.Component {
     return text_obj;
   }
 
-  // renderFixed(img_url){
-  //  console.log(img_url) 
+  // renderFixed(data.img_url){
+  //  console.log(data.img_url) 
   //  return(
   //     <div className="toimage-card-fixed">
-  //       <img className="blur-image-bg" src={img_url}/>
-  //       <img src={img_url} width="100%"/>
+  //       <img className="blur-image-bg" src={data.img_url}/>
+  //       <img src={data.img_url} width="100%"/>
   //     </div>
   //  ) 
   // }
 
-  // renderFluid(img_url){
-  //   // console.log(img_url)
+  // renderFluid(data.img_url){
+  //   // console.log(data.img_url)
   //   return(
-  //       <img src={img_url} width="100%"/>
+  //       <img src={data.img_url} width="100%"/>
   //   )
     
   // }
-  
-  render() {
-    /*
-      Code the CARD UI
-      Ensure that you break down the UI into multiple smaller components /functions that can be reused.
-    */
-    // console.log(this.state.dataJSON.data)
-    if (this.state.fetchingData) {
-      return (<div>Loading</div>)
-    } else {
 
-      let img_url = this.state.dataJSON.data.img_url;
-      
-      // let {width,heigth} = this.state.dimensions
-      // console.log(this.state.dimensions)
+  renderSixteenCol() {
+    if (this.state.fetchingData) {
+      return (
+        <div></div>
+      )
+    } else {
+      let data = this.state.dataJSON.data;
       
       return (
-        <div className="toimage-card-fixed">
-          <img className="blur-image-bg" src={img_url}/>
-          {(this.state.imgHeight > this.state.imgWidth)?<img src={img_url} height="100%"/>:<img src={img_url} width="100%"/>}
+        <div className="pro-column-16">
+          <div className="pro-rows-5">
+            <div className="toimage-card-fixed">
+              <img className="blur-image-bg" src={data.img_url}/>
+              {(this.state.imgHeight > this.state.imgWidth)?<img src={data.img_url} height="100%"/>:<img src={data.img_url} width="100%"/>}
+            </div>
+          </div>
         </div>
-
       );
     }
   }
+  renderSevenCol() {
+    if (this.state.fetchingData) {
+      return (
+        <div></div>
+      )
+    } else {
+      let data = this.state.dataJSON.data;
+      
+      return (
+        <div className="pro-column-7">
+          <div className="pro-rows-3">
+            <div className="toimage-card-fixed">
+              <img className="blur-image-bg" src={data.img_url}/>
+              {(this.state.imgHeight > this.state.imgWidth)?<img src={data.img_url} height="100%"/>:<img src={data.img_url} width="100%"/>}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  renderFourCol() {
+    if (this.state.fetchingData) {
+      return (
+        <div></div>
+      )
+    } else {
+      let data = this.state.dataJSON.data;
+      
+      return (
+        <div className="pro-column-4">
+          <div className="pro-rows-3">
+            <div className="toimage-card-fixed">
+              <img className="blur-image-bg" src={data.img_url}/>
+              {(this.state.imgHeight > this.state.imgWidth)?<img src={data.img_url} height="100%"/>:<img src={data.img_url} width="100%"/>}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  renderTwoCol() {
+    if (this.state.fetchingData) {
+      return (
+        <div></div>
+      )
+    } else {
+      let data = this.state.dataJSON.data;
+      
+      return (
+        <div className="pro-column-2">
+          <div className="pro-rows-3">
+            <div className="toimage-card-fixed">
+              <img className="blur-image-bg" src={data.img_url}/>
+              {(this.state.imgHeight > this.state.imgWidth)?<img src={data.img_url} height="100%"/>:<img src={data.img_url} width="100%"/>}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  
+  render() {
+    switch(this.props.mode) {
+      case 'col16':
+        return this.renderSixteenCol();
+      case 'col7':
+        return this.renderSevenCol();
+      case 'col4':
+        return this.renderFourCol();
+      case 'col2':
+        return this.renderTwoCol();
+      default : 
+        return this.renderSixteenCol();  
+    }
+  }
+  
+  
 }
