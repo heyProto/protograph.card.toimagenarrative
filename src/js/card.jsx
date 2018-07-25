@@ -112,13 +112,30 @@ export default class toCard extends React.Component {
     } else {
       return(
         <div className="toimage-card-fixed">
-          <img className="blur-image-bg" src={data.img_url}/>
-          {(this.state.imgHeight > this.state.imgWidth)?<img src={data.img_url} height="100%"/>:<img src={data.img_url} width="100%"/>}
+          {(this.state.imgHeight < this.state.imgWidth) ? <img src={data.img_url} height="100%" alt={data.caption} /> : <img src={data.img_url} width="100%" alt={data.caption}/>}
+          <div className="image-caption">{data.caption}</div>
         </div>
       )
     }
   }
 
+  renderNineCol() {
+    if (this.state.fetchingData) {
+      return (
+        <div></div>
+      )
+    } else {
+      let data = this.state.dataJSON.data;
+
+      return (
+        <div className="pro-column-9">
+          <div className="pro-rows-3">
+            {this.renderHTML(data)}
+          </div>
+        </div>
+      );
+    }
+  }
 
   renderSevenCol() {
     if (this.state.fetchingData) {
@@ -173,6 +190,8 @@ export default class toCard extends React.Component {
 
   render() {
     switch(this.props.mode) {
+      case 'col9':
+        return this.renderNineCol();
       case 'col7':
         return this.renderSevenCol();
       case 'col4':

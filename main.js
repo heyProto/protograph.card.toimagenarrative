@@ -21,6 +21,11 @@ ProtoGraph.Card.toImageNarrative.prototype.renderSixteenCol= function (data) {
   this.render();
 }
 
+ProtoGraph.Card.toImageNarrative.prototype.renderNineCol = function (data) {
+  this.mode = 'col9';
+  this.render();
+}
+
 ProtoGraph.Card.toImageNarrative.prototype.renderSevenCol= function (data) {
   this.mode = 'col7';
   this.render();

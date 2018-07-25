@@ -42,7 +42,8 @@ export default class editCard extends React.Component {
           fetchingData: false,
           dataJSON: card.data,
           schemaJSON: schema.data,
-          uiSchemaJSON: uiSchema.data
+          uiSchemaJSON: uiSchema.data,
+          mode: "col9"
         };
 
         this.setState(stateVars);

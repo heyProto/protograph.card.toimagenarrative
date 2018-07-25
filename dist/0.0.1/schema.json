@@ -8,7 +8,19 @@
       "properties": {
         "img_url":{
           "id": "/properties/data/properties/image_url",
-          "type":"string"
+          "title": "Image URL",
+          "type":"string",
+          "format": "uri"
+        },
+        "caption": {
+          "title": "Caption",
+          "type": "string"
+        },
+        "caption_url": {
+          "id": "/properties/data/properties/caption_url",
+          "title": "Caption URL",
+          "type": "string",
+          "format": "uri"
         }
       },
       "title": "Card Data",
