@@ -54,6 +54,7 @@ ProtoGraph.Card.toImageNarrative.prototype.render = function () {
   } else {
     render(
       <Card
+        selector={this.options.selector}
         dataURL={this.options.data_url}
         schemaURL={this.options.schema_url}
         siteConfigs={this.options.site_configs}

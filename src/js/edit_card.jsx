@@ -14,7 +14,6 @@ export default class editCard extends React.Component {
       fetchingData: true,
       uiSchemaJSON: {}
     }
-    this.toggleMode = this.toggleMode.bind(this);
 
   }
 
@@ -162,27 +161,27 @@ export default class editCard extends React.Component {
   //     step: prev_step
   //   });
   // }
-  toggleMode(e) {
-    let element = e.target.closest('a'),
-      mode = element.getAttribute('data-mode');
-    this.setState((prevState, props) => {
-      return {
-        mode: mode
-      }
-    }, (() => {
-          this.setState((prevState, props) => {
-            let newMode;
-            if (mode !== prevState.mode) {
-              newMode = mode;
-            } else {
-              newMode = prevState.mode
-            }
-            return {
-              mode: newMode
-            }
-          })
-        }))
-  }
+  // toggleMode(e) {
+  //   let element = e.target.closest('a'),
+  //     mode = element.getAttribute('data-mode');
+  //   this.setState((prevState, props) => {
+  //     return {
+  //       mode: mode
+  //     }
+  //   }, (() => {
+  //         this.setState((prevState, props) => {
+  //           let newMode;
+  //           if (mode !== prevState.mode) {
+  //             newMode = mode;
+  //           } else {
+  //             newMode = prevState.mode
+  //           }
+  //           return {
+  //             mode: newMode
+  //           }
+  //         })
+  //       }))
+  // }
 
   render() {
     if (this.state.fetchingData) {
@@ -211,26 +210,7 @@ export default class editCard extends React.Component {
               </div>
               <div className="twelve wide column proto-card-preview proto-share-card-div">
                 <div className="protograph-menu-container">
-                  <div className="ui compact menu">
-                    <a className={`item ${this.state.mode === 'col7' ? 'active' : ''}`}
-                      data-mode='col7'
-                      onClick={this.toggleMode}
-                    >
-                      col-7
-                    </a>
-                    <a className={`item ${this.state.mode === 'col4' ? 'active' : ''}`}
-                      data-mode='col4'
-                      onClick={this.toggleMode}
-                    >
-                      col-4
-                    </a>
-                    <a className={`item ${this.state.mode === 'col3' ? 'active' : ''}`}
-                      data-mode='col3'
-                      onClick={this.toggleMode}
-                    >
-                      col-3
-                    </a>
-                  </div>
+
                 </div>
                 <div className="protograph-app-holder">
                   <Card
