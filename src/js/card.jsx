@@ -111,7 +111,7 @@ export default class toCard extends React.Component {
       )
     } else {
       return(
-        <div className="toimage-card-fixed">
+        <div className={this.props.renderingSSR ? "" : "toimage-card-fixed"}>
           {(this.state.imgHeight < this.state.imgWidth) ? <img src={data.img_url} height="100%" alt={data.caption} /> : <img src={data.img_url} width="100%" alt={data.caption}/>}
           <div className="image-caption">{data.caption}</div>
         </div>

@@ -21,10 +21,12 @@ global.window = {};
 
 function render(initialState) {
     let content = renderToString(
-        <Card
-            dataJSON={initialState.dataJSON}
-            renderingSSR={true}
-        />
+        <div className="article-media">
+            <Card
+                dataJSON={initialState.dataJSON}
+                renderingSSR={true}
+            />
+        </div>
     );
 
     return { content, initialState };
@@ -32,6 +34,5 @@ function render(initialState) {
 
 module.exports = {
     render: render,
-    // getScriptString: getScriptString,
     instance: 'toImageNarrative'
 }
