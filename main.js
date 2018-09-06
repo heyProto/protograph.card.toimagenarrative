@@ -49,11 +49,10 @@ ProtoGraph.Card.toImageNarrative.prototype.render = function () {
   if (this.options.isFromSSR) {
     hydrate(
       <Card
-
         selector={this.options.selector}
+        mode={this.mode}
         dataURL={this.options.data_url}
         siteConfigs={this.options.site_configs}
-        dataURL={this.options.data_url}
       />,
       this.options.selector);
   } else {
