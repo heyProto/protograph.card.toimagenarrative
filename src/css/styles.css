@@ -1,7 +1,10 @@
-.toimage-card-fixed{
-
+.pro-col-9 .toimage-card-fixed{
 	margin-bottom : 20px;
-	/* margin-left: -80px; */
+    width: 700px;
+}
+
+.pro-col-7 .toimage-card-fixed{
+    width: 540px;
 }
 
 .toimage-card-fixed img{
@@ -23,15 +26,9 @@
 	filter: blur(5px);
 }
 
-.pro-column-9 {
-	width: 700px;
-}
-.pro-column-7 {
-	width: 540px;
-}
 
 @media only screen and (max-width: 500px) {
-  .pro-column-9, .pro-column-7 {
+  .pro-col-9 .toimage-card-fixed, .pro-col-7 .toimage-card-fixed{
 	width: 100%;
   }
 }

@@ -50,9 +50,9 @@ ProtoGraph.Card.toImageNarrative.prototype.render = function () {
     hydrate(
       <Card
         selector={this.options.selector}
-        mode={this.mode}
         dataURL={this.options.data_url}
         siteConfigs={this.options.site_configs}
+        renderingSSR={true}
       />,
       this.options.selector);
   } else {

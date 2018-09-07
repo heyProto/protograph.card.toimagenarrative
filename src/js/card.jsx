@@ -111,7 +111,7 @@ export default class toCard extends React.Component {
       )
     } else {
       return(
-        <div className={this.props.renderingSSR ? "" : "toimage-card-fixed"}>
+        <div className={this.props.renderingSSR ? "article-media" : "toimage-card-fixed"}>
           {(this.state.imgHeight < this.state.imgWidth) ? <img src={data.img_url} height="100%" alt={data.caption} /> : <img src={data.img_url} width="100%" alt={data.caption}/>}
           <div className="image-caption">{data.caption}</div>
         </div>
@@ -128,10 +128,8 @@ export default class toCard extends React.Component {
       let data = this.state.dataJSON.data;
 
       return (
-        <div className="pro-column-9">
-          <div className="pro-rows-3">
-            {this.renderHTML(data)}
-          </div>
+        <div className="pro-col-9">
+          {this.renderHTML(data)}
         </div>
       );
     }
@@ -146,10 +144,8 @@ export default class toCard extends React.Component {
       let data = this.state.dataJSON.data;
 
       return (
-        <div className="pro-column-7">
-          <div className="pro-rows-3">
-            {this.renderHTML(data)}
-          </div>
+        <div className="pro-col-7">
+          {this.renderHTML(data)}
         </div>
       );
     }
@@ -163,10 +159,8 @@ export default class toCard extends React.Component {
       let data = this.state.dataJSON.data;
 
       return (
-        <div className="pro-column-4">
-          <div className="pro-rows-3">
-            {this.renderHTML(data)}
-          </div>
+        <div className="pro-col-4">
+          {this.renderHTML(data)}
         </div>
       );
     }
@@ -179,10 +173,8 @@ export default class toCard extends React.Component {
     } else {
       let data = this.state.dataJSON.data;
       return (
-        <div className="pro-column-2">
-          <div className="pro-rows-3">
-            {this.renderHTML(data)}
-          </div>
+        <div className="pro-col-2">
+          {this.renderHTML(data)}
         </div>
       );
     }
