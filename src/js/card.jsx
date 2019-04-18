@@ -112,8 +112,9 @@ export default class toCard extends React.Component {
     } else {
       return(
         <div className={this.props.renderingSSR ? "article-media" : "toimage-card-fixed"}>
-          {(this.state.imgHeight < this.state.imgWidth) ? <img src={data.img_url} height="100%" alt={data.caption} /> : <img src={data.img_url} width="100%" alt={data.caption}/>}
-          <div className="image-caption">{data.caption}</div>
+        {data.link ? (<a href={data.link} target="_blank">{(this.state.imgHeight < this.state.imgWidth) ? <img src={data.img_url} height="100%" alt={data.caption} /> : <img src={data.img_url} width="100%" alt={data.caption}/>}</a>) : (this.state.imgHeight < this.state.imgWidth) ? <img src={data.img_url} height="100%" alt={data.caption} /> : <img src={data.img_url} width="100%" alt={data.caption}/>}
+          
+          <div className="image-caption">{data.caption_url ? <a href={data.caption_url} target="_blank">{data.caption}</a> : data.caption}</div>
         </div>
       )
     }

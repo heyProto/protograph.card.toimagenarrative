@@ -2,6 +2,7 @@
   "data": {
     "img_url":"https://images.indianexpress.com/2015/11/parekh-main.jpg",
     "caption":"Sample Caption",
-    "caption_url":"#"
+    "caption_url":"#",
+    "link": "https://google.com"
   }
 }
