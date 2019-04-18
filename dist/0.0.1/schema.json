@@ -21,6 +21,12 @@
           "title": "Caption URL",
           "type": "string",
           "format": "uri"
+        },
+        "link": {
+          "id": "/properties/data/properties/link",
+          "title": "Link",
+          "type": "string",
+          "format": "uri"
         }
       },
       "title": "Card Data",
